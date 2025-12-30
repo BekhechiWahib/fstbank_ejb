@@ -3,6 +3,6 @@ import jakarta.persistence.Entity;
 
 
 @Entity
-public class Banquier extends CompteBancaire{
+public class Banquier extends Users{
     
 }
