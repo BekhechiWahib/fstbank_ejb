@@ -1,7 +1,8 @@
 package fstbank_ejb.services.compte_services;
 
 import fstbank_ejb.entity.CompteBancaire;
-import fstbank_ejb.entity.CompteParticulier;
+import fstbank_ejb.entity.ComptePartager;
+import fstbank_ejb.entity.ComptePrive;
 import fstbank_ejb.entity.ComptePro;
 import fstbank_ejb.util.CompteType;
 import jakarta.ejb.Stateless;
@@ -9,11 +10,11 @@ import jakarta.ejb.Stateless;
 @Stateless
 public class CompteFactory {
     
-       public CompteBanquaire createCompte(CompteType type) {
+       public CompteBancaire createCompte(CompteType type) {
 
         switch (type) {
-            case PARTICULIER:
-                return new CompteParticulier();
+            case PARTAGER:
+                return new ComptePartager();
 
             case PRO:
                 return new ComptePro();

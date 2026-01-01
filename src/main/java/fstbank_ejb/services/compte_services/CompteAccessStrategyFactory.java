@@ -15,7 +15,7 @@ public class CompteAccessStrategyFactory {
             throw new IllegalArgumentException("User null");
         }
 
-        switch (user.getType()) {
+        switch (user.getUserType()) {
             case CLIENT:
                 return new ClientAccessStrategy();
 

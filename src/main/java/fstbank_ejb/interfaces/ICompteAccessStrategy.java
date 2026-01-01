@@ -4,6 +4,6 @@ public interface ICompteAccessStrategy {
     public boolean canVirement();
     public boolean canRetrait();
     public boolean canConsulterSolde();
-    public boolean canImprimerRelever();
+    public boolean canImprimerReleve();
     public boolean canConsulterHistorique();
 }
