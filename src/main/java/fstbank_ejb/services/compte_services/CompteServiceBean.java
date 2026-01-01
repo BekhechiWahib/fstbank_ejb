@@ -32,7 +32,6 @@ public class CompteServiceBean {
         compte.setSolde(soldeInitial);
 
         entityManager.persist(compte);
-        entityManager.persist(compte);
         return compte;
     }
 
