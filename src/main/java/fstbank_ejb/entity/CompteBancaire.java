@@ -2,9 +2,10 @@ package fstbank_ejb.entity;
 
 import java.util.List;
 
-import fstbank_ejb.services.strategy_access.AccessStrategyFactory;
-import jakarta.ejb.Stateless;
+import fstbank_ejb.util.CompteType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -20,6 +21,8 @@ public abstract class CompteBancaire {
     @Id @GeneratedValue
     private Long id;
     private double solde;
+    @Enumerated(EnumType.STRING)
+    private CompteType compteType;
 
     @ManyToOne
     @JoinColumn(name = "client_id")

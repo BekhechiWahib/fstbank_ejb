@@ -1,11 +1,11 @@
 package fstbank_ejb.services.banquier_services;
 
-import java.util.List;
+import java.util.ArrayList;
+
 
 import fstbank_ejb.entity.Client;
 import fstbank_ejb.entity.CompteBancaire;
-import fstbank_ejb.entity.Transaction;
-import fstbank_ejb.services.compte_services.CompteFactory;
+import fstbank_ejb.util.ClientType;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -20,14 +20,14 @@ public class BanquierServiceBean {
             client.setNom(nom);
             client.setPrenom(prenom);
             client.setAdresse(adresse);
-            client.setType(type);
-            client.setComptes(new List<>());
+            client.setClientType(type);
+            client.setComptes(new ArrayList<>());
 
             em.persist(client);
             return client;
     }
 
-    public void ajouterCompte(Long clientId, CompteBanquaire compte) {
+    public void ajouterCompte(Long clientId, CompteBancaire compte) {
 
         Client client = em.find(Client.class, clientId);
         compte.setClient(client);

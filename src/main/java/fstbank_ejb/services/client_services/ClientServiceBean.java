@@ -1,16 +1,15 @@
 package fstbank_ejb.services.client_services;
 
-import fstbank_ejb.services.strategy_access.AccessStrategyFactory;
+import java.util.List;
+
+import fstbank_ejb.entity.Client;
+import fstbank_ejb.entity.CompteBancaire;
 import jakarta.ejb.Stateless;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 
 @Stateless
 public class ClientServiceBean {
 
-
-    public boolean verifierAcces(Client client) {
-      IAccessStrategy strategy = AccessStrategyFactory.getStrategy(client);
-        return strategy.autoriser(client);
+    public List<CompteBancaire> getListeComptes(Client client) {
+        return client.getComptes(); 
     }
 }

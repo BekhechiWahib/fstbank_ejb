@@ -1,4 +1,5 @@
 package fstbank_ejb.entity;
+import fstbank_ejb.util.UserType;
 import jakarta.persistence.*;
 
 @Entity
@@ -11,7 +12,7 @@ public class Users {
     private String prenom;
     private String adresse;
     @Enumerated(EnumType.STRING)
-    private UserType type;
+    private UserType userType;
 
     public Long getId() { return id; }  public void setId(Long id) { this.id = id; }
 
@@ -21,6 +22,6 @@ public class Users {
 
     public String getAdresse() { return adresse; } public void setAdresse(String adresse) { this.adresse = adresse; }
     
-    public UserType getType() { return type; } public void setType(UserType type) { this.type = type; }
+    public UserType getUserType() { return userType; } public void setUserType(UserType userType) { this.userType = userType; }
     
 }
