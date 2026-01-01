@@ -2,6 +2,7 @@ package fstbank_ejb.entity;
 
 import java.util.List;
 
+
 import fstbank_ejb.util.CompteType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -14,6 +15,7 @@ import jakarta.persistence.InheritanceType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
