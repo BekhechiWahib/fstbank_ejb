@@ -15,19 +15,23 @@ import jakarta.persistence.PersistenceContext;
 
 @Stateless
 public class CompteServiceBean {
+   
     @EJB
     private CompteFactory compteFactory;
     @EJB
     private CompteAccessStrategyFactory compteAccessStrategyFactory;
+  
 
     @PersistenceContext(unitName = "fstbankPU")
     private EntityManager entityManager;
+  
 
     public CompteBancaire ouvrirCompte(CompteType type, double soldeInitial) {
 
         CompteBancaire compte = compteFactory.createCompte(type);
         compte.setSolde(soldeInitial);
 
+        entityManager.persist(compte);
         entityManager.persist(compte);
         return compte;
     }
