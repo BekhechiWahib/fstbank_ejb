@@ -1,8 +1,9 @@
 package fstbank_ejb.entity;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
+import fstbank_ejb.util.ClientType;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
