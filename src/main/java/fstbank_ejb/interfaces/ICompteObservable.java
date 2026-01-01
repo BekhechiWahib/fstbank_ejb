@@ -1,10 +1,10 @@
 package fstbank_ejb.interfaces;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface ICompteObservable {
     // List of clients subscribed to a shared account
-    public ArrayList<ICompteObserver> comptePartagerSubscriber;
+    public List<ICompteObserver> comptePartagerSubscriber;
     // the latest change of the sold in the shared account
     public double lastSoldeChange;
 
