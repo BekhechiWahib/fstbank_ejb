@@ -22,7 +22,7 @@ public class CompteServiceBean {
     private CompteAccessStrategyFactory compteAccessStrategyFactory;
   
 
-    @PersistenceContext(unitName = "fstbankPU")
+    @PersistenceContext
     private EntityManager entityManager;
   
 

@@ -12,7 +12,7 @@ import jakarta.persistence.PersistenceContext;
 
 @Stateless
 public class BanquierServiceBean {   
-   @PersistenceContext(unitName = "fstbankPU")
+   @PersistenceContext
     private EntityManager em;
 
     public Client creerClient(String nom, String prenom, String adresse, ClientType type) {
