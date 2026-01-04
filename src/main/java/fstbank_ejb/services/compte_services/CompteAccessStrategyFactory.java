@@ -11,7 +11,7 @@ public class CompteAccessStrategyFactory {
     
   public ICompteAccessStrategy getStrategy(Users user) {
 
-        if (user == null) {
+        if (user == null || user.getUserType() == null ) {
             throw new IllegalArgumentException("User null");
         }
 

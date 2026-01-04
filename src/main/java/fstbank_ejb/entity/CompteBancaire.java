@@ -1,5 +1,6 @@
 package fstbank_ejb.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -19,7 +20,7 @@ import jakarta.persistence.OneToMany;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class CompteBancaire {
+public abstract class CompteBancaire  implements Serializable{
     @Id @GeneratedValue
     private Long id;
     private double solde;

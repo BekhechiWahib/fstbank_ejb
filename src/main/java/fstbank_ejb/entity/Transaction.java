@@ -1,28 +1,35 @@
 package fstbank_ejb.entity;
 
-import java.time.LocalDate;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
+import fstbank_ejb.util.OperationType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Transaction {
+public class Transaction implements Serializable{
     @Id @GeneratedValue
     private Long id;
-    private String type;
+   
+    @Enumerated(EnumType.STRING)
+    private OperationType operationType;
+    
     private double montant;
-    private LocalDate date;
+    private LocalDateTime date;
 
     @ManyToOne
     private CompteBancaire compte;
 
 
     public Long getId() { return id; } public void setId(Long id) { this.id = id;}
-    public String getType() { return type; } public void setType(String type) { this.type = type; }
+    public OperationType getOperationType() { return operationType; } public void setOperationType(OperationType type) { this.operationType = type; }
     public double getMontant() { return montant; } public void setMontant(double montant) { this.montant = montant; }
     public CompteBancaire getCompte() { return compte; } public void setCompte(CompteBancaire compte) { this.compte = compte; }
-    public LocalDate getDate() { return date; } public void setDate(LocalDate date) { this.date = date; }
+    public LocalDateTime getDate() { return date; } public void setDate(LocalDateTime date) { this.date = date; }
 
 }

@@ -1,10 +1,12 @@
 package fstbank_ejb.entity;
+import java.io.Serializable;
+
 import fstbank_ejb.util.UserType;
 import jakarta.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED) 
-public class Users {
+public class Users implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -13,6 +15,8 @@ public class Users {
     private String adresse;
     @Enumerated(EnumType.STRING)
     private UserType userType;
+    @OneToOne
+    private Client client;
 
     public Long getId() { return id; }  public void setId(Long id) { this.id = id; }
 
@@ -24,4 +28,5 @@ public class Users {
     
     public UserType getUserType() { return userType; } public void setUserType(UserType userType) { this.userType = userType; }
     
+    public Client getClient() { return client; } public void setClient(Client client) { this.client = client; }
 }
